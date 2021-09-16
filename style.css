@@ -1,0 +1,90 @@
+#header {
+    text-align: center;
+    margin: 0 auto;
+  }
+  
+  
+  
+  img {
+    height: 100px;
+    width: 100px;
+  }
+  
+  #header-img {
+    height: 275px;
+    width: 550px;
+  }
+
+  .container {
+    display: flex;
+    flex: 1;
+  }
+
+  .column {
+    flex-direction: column;
+    flex: 1;
+  }
+  
+  .day-box {
+    border: solid;
+    border-color: #4ca3d6;
+    /* padding: 50px; */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    display: inline-block;
+    transition: 0.3s;
+    margin: 30px;
+    text-align: left;
+    width: 200px;
+    height: 375px;
+  }
+  
+  
+  #box-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  input[type="text"]:not(.edit-input) {
+    padding: 10px;
+    border: 0;
+    box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
+    padding: 12px 20px;
+    margin: 8px 0;
+  }
+  
+  button[type="submit"] {
+    background-color: #c4ee52;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    margin-left: 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  input[type="submit"]:hover {
+    background-color: hsl(189, 100%, 51%);
+  }
+  
+  label {
+    color: rgb(83, 79, 79);
+  }
+  
+
+
+  
+  .delete-bttn {
+    background-color: rgb(97, 220, 236);
+    color: white;
+    font-size: small;
+  }
+  
+  .delete-bttn:hover {
+    background-color: pink;
+  }
+
+  .strikethrough {
+    text-decoration: line-through;
+  }

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="index.js" ></script>
+  <title>My Project</title>
+</head>
+<body>
+  <h1>
+    My Weekday Planner 
+  </h1>
+ 
+  <div id='lblGreetings'></div>
+
+  <div class="container">
+
+    <div class="column">
+      <h3>Monday's ToDos</h3>
+      <form class="comment-form" data-day="monday" action="">
+        <input type='text' name="comment" id="comment-input">
+        </br>
+        <button data-day="monday">submit</button>
+      </form>
+
+      <div class="day-box">
+        <div id='monday-list' class='comments'></div>
+      </div>
+        
+    </div>
+
+    <div class="column">
+      <h3>Tuesday's ToDos</h3>
+      <form class="comment-form" data-day="tues" action="">
+        <input type='text' name="comment" id="comment-input">
+        </br>
+        <button>submit</button>
+      </form>
+
+        <div class="day-box">
+          <div id='tues-list' class='comments'></div>
+        </div>
+    </div>
+
+    <div class="column">
+      <h3>Wednesday's ToDos</h3>
+      <form class="comment-form" data-day="wed" action="">
+        <input type='text' name="comment" id="comment-input">
+        </br>
+        <button>submit</button>
+      </form>
+
+        <div class="day-box">
+          <div id='wed-list' class='comments'></div>
+        </div>
+    </div>
+
+    <div class="column">
+      <h3>Thursday's ToDos</h3>
+      <form class="comment-form" data-day="thurs" action="">
+        <input type='text' name="comment" id="comment-input" >
+        </br>
+        <button>submit</button>
+      </form>
+
+        <div class="day-box">
+          <div id='thurs-list' class='comments'></div>
+        </div>
+    </div>
+
+    <div class="column">
+      <h3>Friday's ToDos</h3>
+      <form class="comment-form" data-day="fri" action="">
+        <input type='text' name="comment" id="comment-input">
+        </br>
+        <button>submit</button>
+      </form>
+
+        <div class="day-box">
+          <div id='fri-list' class='comments'></div>
+        </div>
+    </div>
+  
+  </div>
+</body>
+</html>
