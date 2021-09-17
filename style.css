@@ -4,12 +4,6 @@
   }
   
   
-  
-  img {
-    height: 100px;
-    width: 100px;
-  }
-  
   #header-img {
     height: 275px;
     width: 550px;
@@ -75,7 +69,7 @@
 
 
   
-  .delete-bttn {
+  .done-bttn {
     background-color: rgb(97, 220, 236);
     color: white;
     font-size: small;

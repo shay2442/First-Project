@@ -10,8 +10,11 @@
   <h1>
     My Weekday Planner 
   </h1>
- 
+
   <div id='lblGreetings'></div>
+
+  <button id='get-weather'>Get Weather</button>
+  <div id='weather-container'></div>
 
   <div class="container">
 
@@ -24,9 +27,9 @@
       </form>
 
       <div class="day-box">
-        <div id='monday-list' class='comments'></div>
+        <ul id='monday-list' class='comments'></ul>
       </div>
-        
+
     </div>
 
     <div class="column">
@@ -38,7 +41,7 @@
       </form>
 
         <div class="day-box">
-          <div id='tues-list' class='comments'></div>
+          <ul id='tues-list' class='comments'></ul>
         </div>
     </div>
 
@@ -51,8 +54,10 @@
       </form>
 
         <div class="day-box">
-          <div id='wed-list' class='comments'></div>
+          <ul id='wed-list' class='comments'></ul>
         </div>
+
+        <button id='clear-btn'>Clear All</button>
     </div>
 
     <div class="column">
@@ -64,7 +69,7 @@
       </form>
 
         <div class="day-box">
-          <div id='thurs-list' class='comments'></div>
+          <ul id='thurs-list' class='comments'></ul>
         </div>
     </div>
 
@@ -77,10 +82,10 @@
       </form>
 
         <div class="day-box">
-          <div id='fri-list' class='comments'></div>
+          <ul id='fri-list' class='comments'></ul>
         </div>
     </div>
-  
+
   </div>
 </body>
 </html>

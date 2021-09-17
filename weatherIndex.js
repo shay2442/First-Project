@@ -2,14 +2,8 @@ const BASE_URL = 'http://localhost:3000/todos';
 const city = 'Austin';
 const WEATHER_URL = `https://goweather.herokuapp.com/weather/${city}`;
 const weatherButton = document.querySelector('#get-weather')
-
 const comment_forms = [...document.querySelectorAll('.comment-form')]
-const allLists = [...document.querySelectorAll('ul')]
-console.log(allLists)
-const clearButton = document.getElementById('clear-btn');
-clearButton.addEventListener('click', () => clearAll(allLists));
 
-let todos = [];
 
 let myDate = new Date();
 let hrs = myDate.getHours();
@@ -26,6 +20,7 @@ else if (hrs >= 17 && hrs <= 24)
 document.getElementById('lblGreetings').innerHTML =
     '<b>' + greet + '</b> the weather today is...insert data from weather API';
 
+
 comment_forms.map(comment_form => {
     comment_form.addEventListener('submit', handleSubmit)
 })
@@ -41,7 +36,9 @@ function getWeather() {
     })
 }
 
-function displayWeather(weatherData) {  
+function displayWeather(weatherData) { 
+    const today = new Date().toLocaleDateString(locale, { weekday: 'long' });
+    console.log(today);  
     const weatherContainer = document.getElementById('weather-container');
     weatherContainer.innerHTML = `<h2>Today</h2><p>${weatherData.temperature}</p>`;
 }
@@ -53,8 +50,7 @@ function handleSubmit(event) {
 
     const commentObj = {
         day: day,
-        comment: comment,
-        complete: false
+        comment: comment
     }
 
     addToDo(commentObj)
@@ -79,7 +75,6 @@ function getAllComments () {
     fetch('http://localhost:3000/todos')
     .then(r => r.json())
     .then(comments => {
-        todos = comments;
         comments.map(comment => {
             renderComment(comment)
         })
@@ -94,41 +89,23 @@ function renderComment(commentObj) {
 
     li.innerHTML = `<span>${commentObj.comment}</span>`;
 
-    if (commentObj.complete === true) {
+     // deleteBttn.addEventListener("click", () => deleteComment(commentObj.comment));
+     const deleteBttn = document.createElement('button');
+     deleteBttn.className = "delete-bttn";
+     deleteBttn.textContent = "Delete";
+     deleteBttn.addEventListener("click", () => deleteItem(li, commentObj.id));
 
-        li.classList.add('strikethrough')
-    }
-    
-
-     const doneButton = document.createElement('button');
-     doneButton.className = "done-bttn";
-     doneButton.textContent = "Done";
-     doneButton.addEventListener("click", () => markDone(li, commentObj.id));
-
-     li.append(doneButton);
+     li.append(deleteBttn);
 
     list.append(li)
 }
 
 
-function markDone(li, itemId){
+function deleteItem(li, itemId){
     li.classList.add('strikethrough')
     fetch(BASE_URL + `/${itemId}`, {
-      method: 'PATCH',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({complete: true})
+      method: 'DELETE'
     })
   }
-
-function clearAll(allLists){
-    allLists.map(list => list.remove());
-    todos.forEach(todo => {
-        fetch(BASE_URL + `/${todo.id}`, {
-            method: 'DELETE'
-        })
-    })
-}
 
 getAllComments();
