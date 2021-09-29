@@ -1,12 +1,22 @@
-#header {
+h1 {
     text-align: center;
     margin: 0 auto;
+    color:rgb(2, 4, 117);
+    font-size: 50px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+  }
+h2 {
+  color: white;
+}
+  h3 {
+    color:rgb(4, 2, 129);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 30px;
+
   }
   
-  
-  #header-img {
-    height: 275px;
-    width: 550px;
+  #temp {
+    color: white;
   }
 
   .container {
@@ -39,35 +49,7 @@
     flex-wrap: wrap;
   }
   
-  input[type="text"]:not(.edit-input) {
-    padding: 10px;
-    border: 0;
-    box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
-    padding: 12px 20px;
-    margin: 8px 0;
-  }
-  
-  button[type="submit"] {
-    background-color: #c4ee52;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    margin-left: 15px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  input[type="submit"]:hover {
-    background-color: hsl(189, 100%, 51%);
-  }
-  
-  label {
-    color: rgb(83, 79, 79);
-  }
-  
-
-
+ 
   
   .done-bttn {
     background-color: rgb(97, 220, 236);
@@ -75,10 +57,133 @@
     font-size: small;
   }
   
+  .delete-bttn {
+    background-color:rgb(77, 153, 143)
+  }
   .delete-bttn:hover {
-    background-color: pink;
+    background-color: rgb(225, 240, 243);
   }
 
   .strikethrough {
-    text-decoration: line-through;
+    text-decoration: line-through double;
+
   }
+  body {background-color:#035a69}
+
+  #header {
+      text-align: center;
+      margin: 0 auto;
+      font-family: Papyrus ;
+      font-size: 2em;
+      color: rgb(158, 199, 158) ;
+      
+    }
+    
+  
+    .container {
+      display: flex;
+      flex: 1;
+    }
+  
+    .column {
+      flex-direction: column;
+      flex: 1;
+    }
+  
+    
+    .day-box {
+      border: 10px solid #1a0397;
+      border-color: #021672;
+      padding: 0px;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      display: inline-block;
+      /* transition: 0.3s; */
+      margin: 30px;
+      /* text-align:left; */
+      width: 200px;
+      height: 375px;
+      /* position: absolute;
+      left: -10px; */
+    }
+    
+    
+    #box-container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    
+    #get-weather {color: rgb(8, 7, 7); font-size: 16px; line-height: 16px; padding: 6px; border-radius: 10px; font-family: Marker Felt, fantasy; font-weight: normal; text-decoration: none; font-style: normal; font-variant: normal; text-transform: none; background-color: rgb(248, 248, 165) ; border: 5px solid rgb(233, 126, 38); display: inline-block;}
+    
+  
+  
+    .submit-button {
+      color: white;
+      font-family: Rockwell ;
+      text-transform: uppercase;
+      background-color: #0526b8;
+      /* margin: 20px; */
+      margin-left: 95px;
+      border: 7px solid #031683;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    
+    input[type="submit"]:hover {
+      background-color: hsl(189, 100%, 51%);
+    }
+    
+    #clear-btn 
+      {color: rgb(8, 7, 7); font-size: 16px; line-height: 16px; padding: 6px; border-radius: 10px; font-family: Marker Felt, fantasy; font-weight: normal; text-decoration: none; font-style: normal; font-variant: normal; text-transform: none; background-color: rgb(248, 248, 165) ; border: 5px solid rgb(233, 126, 38); display: inline-block; text-transform: uppercase; text-align: center;}
+    
+    
+   
+  
+    
+    .done-bttn {
+      color: rgb(255, 255, 255); font-size: 12px; line-height: 8px; padding: 4px; border-radius: 2px; font-family: Georgia, serif; font-weight: normal; background-color:rgb(19, 2, 119)}
+      .done-bttn:hover {
+      background: #1C6EA4; }
+      .done-bttn:active {
+      background: #144E75;
+    }
+    
+  
+    .strikethrough {
+      text-decoration: line-through;
+      line-height: 1.5em;
+      font-family: bold;
+      text-decoration-thickness: 2px;
+      }
+
+    
+  
+    span {
+      color: white;
+      font-size: 12px;
+      font-family: Georgia ;
+      text-transform: uppercase;
+    }
+  
+    #comment-input {
+      background-color:#bbd4d8
+
+    }
+    
+    .submit-bttn {
+       
+        color: rgb(255, 255, 255); font-size: 16px; line-height: 16px; padding: 6px; border-radius: 10px; font-family: Georgia, serif; font-weight: normal; text-decoration: none; font-style: normal; font-variant: normal; text-transform: none; background-image: linear-gradient(to right, rgb(28, 110, 164) 0%, rgb(35, 136, 203) 50%, rgb(20, 78, 117) 100%); box-shadow: rgb(0, 0, 0) 5px 5px 15px 5px; border: 2px solid rgb(28, 110, 164); display: inline-block;
+        text-transform: uppercase;}
+
+
+        
+
+    
+  
+  
+  
+  
+  
+  
+  
+  

@@ -5,26 +5,10 @@ const weatherButton = document.querySelector('#get-weather')
 
 const comment_forms = [...document.querySelectorAll('.comment-form')]
 const allLists = [...document.querySelectorAll('ul')]
-console.log(allLists)
+// console.log(allLists)
 const clearButton = document.getElementById('clear-btn');
 clearButton.addEventListener('click', () => clearAll(allLists));
 
-let todos = [];
-
-let myDate = new Date();
-let hrs = myDate.getHours();
-
-let greet;
-
-if (hrs < 12)
-    greet = 'Good Morning';
-else if (hrs >= 12 && hrs <= 17)
-    greet = 'Good Afternoon';
-else if (hrs >= 17 && hrs <= 24)
-    greet = 'Good Evening';
-
-document.getElementById('lblGreetings').innerHTML =
-    '<b>' + greet + '</b> the weather today is...insert data from weather API';
 
 comment_forms.map(comment_form => {
     comment_form.addEventListener('submit', handleSubmit)
@@ -36,14 +20,15 @@ function getWeather() {
     fetch(WEATHER_URL)
     .then(r => r.json())
     .then(weatherData => {
-        console.log(weatherData)
         displayWeather(weatherData)
     })
 }
 
 function displayWeather(weatherData) {  
     const weatherContainer = document.getElementById('weather-container');
-    weatherContainer.innerHTML = `<h2>Today</h2><p>${weatherData.temperature}</p>`;
+    const celsiusToFahrenheit = (celsius) => parseInt(celsius) * 9/5 + 32;
+    const temperature = celsiusToFahrenheit(weatherData.temperature);
+    weatherContainer.innerHTML = `<h2>Today it is</h2><p id='temp'>${temperature + '°F   ' + 'and' + '      ' + weatherData.description}</p>`;
 }
 
 function handleSubmit(event) {
@@ -79,7 +64,7 @@ function getAllComments () {
     fetch('http://localhost:3000/todos')
     .then(r => r.json())
     .then(comments => {
-        todos = comments;
+        // todos = comments;
         comments.map(comment => {
             renderComment(comment)
         })
@@ -105,10 +90,25 @@ function renderComment(commentObj) {
      doneButton.textContent = "Done";
      doneButton.addEventListener("click", () => markDone(li, commentObj.id));
 
-     li.append(doneButton);
+    const deleteButton= document.createElement('button')
+    deleteButton.className = 'delete-bttn'
+    deleteButton.textContent = 'X'
+    deleteButton.addEventListener('click', () => deleteItem(li, commentObj.id))
+
+     li.append(doneButton, deleteButton);
 
     list.append(li)
 }
+
+    function deleteItem(li, itemId) {
+        li.remove()
+      
+        fetch (BASE_URL + `/${itemId}`, {
+          method: "DELETE"
+      
+        })
+      }
+
 
 
 function markDone(li, itemId){
@@ -121,6 +121,9 @@ function markDone(li, itemId){
       body: JSON.stringify({complete: true})
     })
   }
+
+
+
 
 function clearAll(allLists){
     allLists.map(list => list.remove());
